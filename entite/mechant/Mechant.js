@@ -1,5 +1,6 @@
-var Mechant = function(colonne, rangee)
+var Mechant = function(terrain, colonne, rangee)
 {
+	this.terrain = terrain;
 	this.colonne = colonne;
 	this.rangee = rangee;
 	this.xPixel = ((colonne)?colonne*50:0);
@@ -7,7 +8,6 @@ var Mechant = function(colonne, rangee)
 };
 Mechant.prototype.colonne;
 Mechant.prototype.rangee;
-Mechant.prototype.terrain = 'T';
 Mechant.prototype.xPixel = 0;//((colonne)?colonne*50:0);
 Mechant.prototype.yPixel = 0;//((rangee)?rangee*50:0);
 Mechant.prototype.pas = [5,5];
@@ -29,3 +29,10 @@ Mechant.prototype.deplacer = function()
 		}
 	}
 }
+
+	//this.orienter = function(pas)
+	//{
+	//	instance.pas = pas;
+	//}
+		
+

@@ -1,11 +1,11 @@
 // https://pixabay.com/fr/tux-des-animaux-oiseau-cha%C3%AEne-161365/
 // Auteur : https://pixabay.com/fr/users/OpenClipart-Vectors-30363/
 
-var Fantome = function(terrain, colonne, rangee)
+var Fantome = function(terrain, colonne,rangee)
 {
-	Mechant.call(this, terrain, colonne, rangee);
+	Mechant.call(this, terrain, colonne,rangee);
 	var instanceFantome = this;
-	
+
 	this.afficher = function(dessin)
 	{
 		
