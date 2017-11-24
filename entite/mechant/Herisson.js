@@ -1,18 +1,15 @@
 // http://svgcuts.com/blog/2013/09/07/free-svg-file-09-07-13-cute-hedgehog/
 // SEPTEMBER 7, 2013
-var Herisson = function(colonne,rangee)
+var Herisson = function(terrain)
 {
-	Mechant.call(this, colonne,rangee);
+	Mechant.call(this, terrain);
 	var instanceHerisson = this;
-	this.terrain = 'T';
-	//this.orienter = function(pas)
-	//{
-	//	instance.pas = pas;
-	//}
-		
+	this.calques = 2;
+	this.espace = 10;
+			
 	this.afficher = function(dessin)
 	{
-dessin.save();
+	dessin.save();
 
 	dessin.translate(instanceHerisson.xPixel, instanceHerisson.yPixel);
 	dessin.scale(1,1);
@@ -29,6 +26,8 @@ dessin.font="   15px ";
 dessin.save();
 dessin.fillStyle="#AF946D";
 dessin.font="   15px ";
+if(this.calculerCalque()==0)
+{
 dessin.beginPath();
 dessin.moveTo(256.721,112.144);
 dessin.bezierCurveTo(256.105,109.66600000000001,254.388,104.01100000000001,250.802,99.976);
@@ -95,6 +94,7 @@ dessin.fill();
 dessin.stroke();
 dessin.restore();
 dessin.save();
+	}
 dessin.fillStyle="rgba(0,0,0,0)";
 dessin.strokeStyle="#CDAD7F";
 dessin.lineCap="round";

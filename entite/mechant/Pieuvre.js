@@ -5,6 +5,7 @@ var Pieuvre = function(terrain)
 {
 	Mechant.call(this, terrain);
 	var instancePieuvre = this;
+	this.calque = 2;
 	
 	this.afficher = function(dessin)
 	{

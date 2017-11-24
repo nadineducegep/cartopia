@@ -1,6 +1,11 @@
 var Mechant = function(terrain)
 {
 	this.terrain = terrain;
+	
+	this.iteration = 0;
+	this.calques = 1;
+	this.pasAnime = 10;
+
 	positionTerrain = trouverPositionTerrain(this.terrain);
 	//console.log('position ' + positionTerrain['rangee'] + ' ' + positionTerrain['colonne']);
 	this.rangee = positionTerrain['rangee'];
@@ -8,9 +13,22 @@ var Mechant = function(terrain)
 	this.xPixel = ((this.colonne)?this.colonne*50:0);
 	this.yPixel = ((this.rangee)?this.rangee*50:0);
 };
-Mechant.prototype.pas = [5,5];
+
+Mechant.prototype.calculerCalque = function()
+{
+	var duree = this.calques*this.espace;
+	var avancement = this.iteration%duree;
+	for(var instant = 1; instant <= this.calques; instant++)
+	{
+		if (avancement > duree/this.calques*instant) return instant;			
+	}
+	return 0;
+}
+
+Mechant.prototype.pas = [1,1];
 Mechant.prototype.deplacer = function()
 {
+	this.iteration++;
 	aDeplacer = this;
 	//alert(this.instanceHerisson);
 	aDeplacer.xPixel += aDeplacer.pas[0];
