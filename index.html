@@ -31,6 +31,8 @@
 		<script type="text/javascript" src="entite/mechant/Fantome.js"></script>
 		<script type="text/javascript" src="entite/mechant/Pieuvre.js"></script>
 		<script type="text/javascript" src="entite/mechant/Herisson.js"></script>
+		
+		<script type="text/javascript" src="entite/mechant/Parchemin.js"></script>
 	</header>
 	
 	<section id="contenu">
@@ -62,6 +64,8 @@
         var monstreVert = new MonstreVert('G');
 		var herisson = new Herisson('T');
 		var pieuvre = new Pieuvre('E');
+
+		var parchemin = new Parchemin('E');
 		
 		var position = 0;
 		var imageCarte = new Image();
@@ -104,6 +108,8 @@
 			dessin.clearRect(0, 0, 1000,650);
 			dessin.drawImage(imageCarte,0,0);
 			
+			parchemin.afficher(dessin);			
+			
 			fantome.deplacer();
 			fantome.afficher(dessin);
 			herisson.deplacer();
@@ -112,7 +118,7 @@
 			monstreVert.afficher(dessin);
 			pieuvre.deplacer();
 			pieuvre.afficher(dessin);
-			
+						
 			dessinerGrille(dessin);
 			window.requestAnimationFrame(dessiner);
 		}
