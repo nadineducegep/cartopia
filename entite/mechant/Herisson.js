@@ -10,10 +10,10 @@ var Herisson = function(terrain)
 	this.afficher = function(dessin)
 	{
 	dessin.save();
-
 	dessin.translate(instanceHerisson.xPixel, instanceHerisson.yPixel);
-	dessin.scale(1,1);
 
+	dessin.scale(3,3);
+	
 dessin.strokeStyle="rgba(0,0,0,0)";
 dessin.miterLimit=4;
 dessin.font="normal normal normal normal 15px / 21.4286px ''";

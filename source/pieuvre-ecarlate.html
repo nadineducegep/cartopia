@@ -1,40 +1,19 @@
-// https://pixabay.com/fr/pieuvre-silhouette-mer-1563580/
-// Auteur : https://pixabay.com/fr/users/Mel--123-3023638/
 
-var Pieuvre = function(terrain)
-{
-	Mechant.call(this, terrain);
-	var instancePieuvre = this;
-	this.calques = 4;
-	this.espace = 3;
-	
-	
-	this.afficher = function(dessin)
-	{
-dessin.save();
-dessin.translate(instancePieuvre.xPixel, instancePieuvre.yPixel);
-dessin.scale(0.025,0.025);
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inkscape Output</title>
+</head>
+<body>
+    <canvas id='canvas' width='2560' height='2172'></canvas>
+    <script>
+    var dessin = document.getElementById("canvas").getContext("2d");
     	
 // #path4511
 	dessin.beginPath();
 	dessin.lineJoin = 'miter';
 	dessin.lineWidth = 1.333333;
-if(this.calculerCalque()==1)
-{
-	dessin.fillStyle = 'rgb(255, 209, 209)';
-}
-if(this.calculerCalque()==2)
-{
-	dessin.fillStyle = 'rgb(255, 165, 165)';
-}
-if(this.calculerCalque()==3)
-{
-	dessin.fillStyle = 'rgb(250, 93, 93)';
-}
-if(this.calculerCalque()==4)
-{
 	dessin.fillStyle = 'rgb(250, 20, 20)';
-}
 	dessin.miterLimit = 4;
 	dessin.globalAlpha = 1.0;
 	dessin.lineCap = 'butt';
@@ -560,11 +539,6 @@ if(this.calculerCalque()==4)
 	dessin.bezierCurveTo(672.218630, 1157.211000, 672.769210, 1154.902700, 673.745920, 1153.926000);
 	dessin.bezierCurveTo(674.976040, 1152.695900, 677.122600, 1151.991700, 679.279130, 1151.967000);
 
-dessin.restore();
-
-	}
-}
-
-Pieuvre.prototype = Object.create(Mechant.prototype);
-Pieuvre.prototype.constructor = Pieuvre;
-
+    </script>
+</body>
+</html>

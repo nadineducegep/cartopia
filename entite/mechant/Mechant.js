@@ -16,16 +16,22 @@ var Mechant = function(terrain)
 
 Mechant.prototype.calculerCalque = function()
 {
+	//console.log('Nombre calques ' + this.calques);
+	//console.log('Iteration ' + this.iteration);
+	this.calqueChoisi = 0;
 	var duree = this.calques*this.espace;
-	var avancement = this.iteration%duree;
+	this.avancement = this.iteration%duree;
+	//console.log('Avancement ' + this.avancement);
 	for(var instant = 1; instant <= this.calques; instant++)
 	{
-		if (avancement > duree/this.calques*instant) return instant;			
+		if(this.avancement < duree/this.calques*instant) {this.calqueChoisi = instant; break;}			
 	}
-	return 0;
+	//console.log('Animation ' + this.calqueChoisi);
+	return this.calqueChoisi;
+	//return 0;
 }
 
-Mechant.prototype.pas = [1,1];
+Mechant.prototype.pas = [2,2];
 Mechant.prototype.deplacer = function()
 {
 	this.iteration++;
