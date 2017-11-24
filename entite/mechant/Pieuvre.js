@@ -144,3 +144,5 @@ dessin.restore();
 }
 
 Pieuvre.prototype = Object.create(Mechant.prototype);
+Pieuvre.prototype.constructor = Pieuvre;
+

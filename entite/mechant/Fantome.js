@@ -1312,3 +1312,5 @@ dessin.restore();
 }
 
 Fantome.prototype = Object.create(Mechant.prototype);
+Fantome.prototype.constructor = Fantome;
+

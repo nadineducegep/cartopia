@@ -328,3 +328,4 @@ dessin.restore();
 }
 
 MonstreVert.prototype = Object.create(Mechant.prototype);
+MonstreVert.prototype.constructor = MonstreVert;

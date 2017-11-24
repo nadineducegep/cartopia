@@ -350,4 +350,5 @@ dessin.restore();
 }
 
 Herisson.prototype = Object.create(Mechant.prototype);
+Herisson.prototype.constructor = Herisson;
 

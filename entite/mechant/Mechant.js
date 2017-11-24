@@ -8,10 +8,6 @@ var Mechant = function(terrain)
 	this.xPixel = ((this.colonne)?this.colonne*50:0);
 	this.yPixel = ((this.rangee)?this.rangee*50:0);
 };
-Mechant.prototype.colonne;
-Mechant.prototype.rangee;
-Mechant.prototype.xPixel = 0;//((colonne)?colonne*50:0);
-Mechant.prototype.yPixel = 0;//((rangee)?rangee*50:0);
 Mechant.prototype.pas = [5,5];
 Mechant.prototype.deplacer = function()
 {
