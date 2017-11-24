@@ -3,32 +3,9 @@
 
 var Pieuvre = function(colonne, rangee)
 {
+	Mechant.call(this, colonne,rangee);	
+	var instancePieuvre = this;
 	this.terrain = 'E';
-	this.pas = [5,5];
-	this.xPixel = ((colonne)?colonne*50:0);
-	this.yPixel = ((rangee)?rangee*50:0);
-	instancePieuvre = this;
-	//this.orienter = function(pas)
-	//{
-	//	instance.pas = pas;
-	//}
-	this.deplacer = function()
-	{
-		aDeplacer = instancePieuvre;
-		aDeplacer.xPixel += aDeplacer.pas[0];
-		aDeplacer.yPixel += aDeplacer.pas[1];
-		colonne = Math.floor(aDeplacer.xPixel/50) + 1;
-		rangee = Math.floor(aDeplacer.yPixel/50) + 1;
-		if(colonne < 22 && rangee < 15)
-		{			
-			terreMarchee = cartographie[rangee][colonne];
-			//document.getElementById('message').innerHTML = terreMarchee;
-			if(terreMarchee != instancePieuvre.terrain)
-			{
-				this.pas = [-this.pas[0],-this.pas[1]];			
-			}
-		}
-	}
 
 	this.afficher = function(dessin)
 	{
@@ -166,3 +143,5 @@ dessin.restore();
 
 	}
 }
+
+Pieuvre.prototype = Object.create(Mechant.prototype);

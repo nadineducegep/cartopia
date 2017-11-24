@@ -1,27 +1,9 @@
 var MonstreVert = function(colonne,rangee)
 {
+	Mechant.call(this, colonne,rangee);	
+	var instanceMonstreVert = this;
 	this.terrain = 'G';
-	this.pas = [5,5];
-	this.xPixel = ((colonne)?colonne*50:0);
-	this.yPixel = ((rangee)?rangee*50:0);
-	instanceMonstreVert = this;
-	this.deplacer = function()
-	{
-		aDeplacer = instanceMonstreVert;
-		aDeplacer.xPixel += aDeplacer.pas[0];
-		aDeplacer.yPixel += aDeplacer.pas[1];
-		colonne = Math.floor(aDeplacer.xPixel/50) + 1;
-		rangee = Math.floor(aDeplacer.yPixel/50) + 1;
-		if(colonne < 22 && rangee < 15)
-		{			
-			terreMarchee = cartographie[rangee][colonne];
-			//document.getElementById('message').innerHTML = terreMarchee;
-			if(terreMarchee != instanceMonstreVert.terrain)
-			{
-				this.pas = [-this.pas[0],-this.pas[1]];			
-			}
-		}
-	}
+	
 	this.afficher = function(dessin)
 	{
 dessin.save();
@@ -345,3 +327,5 @@ dessin.restore();
 dessin.restore();
 	}
 }
+
+MonstreVert.prototype = Object.create(Mechant.prototype);

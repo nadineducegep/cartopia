@@ -1,30 +1,10 @@
 // https://pixabay.com/fr/tux-des-animaux-oiseau-cha%C3%AEne-161365/
 // Auteur : https://pixabay.com/fr/users/OpenClipart-Vectors-30363/
 
-var Fantome = function(colonne,rangee)
+var Fantome = function(terrain, colonne, rangee)
 {
-	this.terrain = 'M';
-	this.pas = [5,5];
-	this.xPixel = ((colonne)?colonne*50:0);
-	this.yPixel = ((rangee)?rangee*50:0);
-	instanceFantome = this;
-	this.deplacer = function()
-	{
-		aDeplacer = instanceFantome;
-		aDeplacer.xPixel += aDeplacer.pas[0];
-		aDeplacer.yPixel += aDeplacer.pas[1];
-		colonne = Math.floor(aDeplacer.xPixel/50) + 1;
-		rangee = Math.floor(aDeplacer.yPixel/50) + 1;
-		if(colonne < 22 && rangee < 15)
-		{			
-			terreMarchee = cartographie[rangee][colonne];
-			//document.getElementById('message').innerHTML = terreMarchee;
-			if(terreMarchee != instanceFantome.terrain)
-			{
-				this.pas = [-this.pas[0],-this.pas[1]];			
-			}
-		}
-	}
+	Mechant.call(this, terrain, colonne, rangee);
+	var instanceFantome = this;
 	
 	this.afficher = function(dessin)
 	{
@@ -1330,3 +1310,5 @@ dessin.restore();
 		
 	}
 }
+
+Fantome.prototype = Object.create(Mechant.prototype);

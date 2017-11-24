@@ -2,40 +2,14 @@
 // SEPTEMBER 7, 2013
 var Herisson = function(colonne,rangee)
 {
+	Mechant.call(this, colonne,rangee);
+	var instanceHerisson = this;
 	this.terrain = 'T';
-	this.pas = [5,5];
-	this.xPixel = ((colonne)?colonne*50:0);
-	this.yPixel = ((rangee)?rangee*50:0);
-	instanceHerisson = this;
 	//this.orienter = function(pas)
 	//{
 	//	instance.pas = pas;
 	//}
-	
-	this.initialiser = function()
-	{
 		
-	}
-	this.initialiser();
-	
-	this.deplacer = function()
-	{
-		aDeplacer = instanceHerisson;
-		aDeplacer.xPixel += aDeplacer.pas[0];
-		aDeplacer.yPixel += aDeplacer.pas[1];
-		colonne = Math.floor(aDeplacer.xPixel/50) + 1;
-		rangee = Math.floor(aDeplacer.yPixel/50) + 1;
-		if(colonne < 22 && rangee < 15)
-		{			
-			terreMarchee = cartographie[rangee][colonne];
-			//document.getElementById('message').innerHTML = terreMarchee;
-			if(terreMarchee != instanceHerisson.terrain)
-			{
-				this.pas = [-this.pas[0],-this.pas[1]];			
-			}
-		}
-	}
-	
 	this.afficher = function(dessin)
 	{
 dessin.save();
@@ -374,3 +348,6 @@ dessin.restore();
 
 	}
 }
+
+Herisson.prototype = Object.create(Mechant.prototype);
+
