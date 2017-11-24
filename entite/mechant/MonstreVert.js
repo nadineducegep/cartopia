@@ -1,6 +1,6 @@
-var MonstreVert = function(terrain, colonne, rangee)
+var MonstreVert = function(terrain)
 {
-	Mechant.call(this, terrain, colonne, rangee);
+	Mechant.call(this, terrain);
 	var instanceMonstreVert = this;
 	
 	this.afficher = function(dessin)

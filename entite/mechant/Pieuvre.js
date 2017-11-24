@@ -1,9 +1,9 @@
 // https://pixabay.com/fr/pieuvre-silhouette-mer-1563580/
 // Auteur : https://pixabay.com/fr/users/Mel--123-3023638/
 
-var Pieuvre = function(terrain, colonne, rangee)
+var Pieuvre = function(terrain)
 {
-	Mechant.call(this, terrain, colonne, rangee);
+	Mechant.call(this, terrain);
 	var instancePieuvre = this;
 	
 	this.afficher = function(dessin)

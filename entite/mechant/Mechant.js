@@ -1,10 +1,12 @@
-var Mechant = function(terrain, colonne, rangee)
+var Mechant = function(terrain)
 {
 	this.terrain = terrain;
-	this.colonne = colonne;
-	this.rangee = rangee;
-	this.xPixel = ((colonne)?colonne*50:0);
-	this.yPixel = ((rangee)?rangee*50:0);
+	positionTerrain = trouverPositionTerrain(this.terrain);
+	//console.log('position ' + positionTerrain['rangee'] + ' ' + positionTerrain['colonne']);
+	this.rangee = positionTerrain['rangee'];
+	this.colonne = positionTerrain['colonne'];
+	this.xPixel = ((this.colonne)?this.colonne*50:0);
+	this.yPixel = ((this.rangee)?this.rangee*50:0);
 };
 Mechant.prototype.colonne;
 Mechant.prototype.rangee;
@@ -30,9 +32,21 @@ Mechant.prototype.deplacer = function()
 	}
 }
 
-	//this.orienter = function(pas)
-	//{
-	//	instance.pas = pas;
-	//}
+function trouverPositionTerrain(terrainRecherche)
+{
+	for(rangeeCourante = 0; rangeeCourante < cartographie.length; rangeeCourante++)
+	{
+		for(colonneCourante = 0; colonneCourante < cartographie[rangeeCourante].length; colonneCourante++)
+		{
+			if(cartographie[rangeeCourante][colonneCourante] == terrainRecherche)
+				return {rangee:rangeeCourante, colonne:colonneCourante};
+		}
+	}
+}
+
+//this.orienter = function(pas)
+//{
+//	instance.pas = pas;
+//}
 		
 
