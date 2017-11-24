@@ -26,7 +26,7 @@ dessin.font="   15px ";
 dessin.save();
 dessin.fillStyle="#AF946D";
 dessin.font="   15px ";
-if(this.calculerCalque()==0)
+if(this.calculerCalque()==1)
 {
 dessin.beginPath();
 dessin.moveTo(256.721,112.144);
