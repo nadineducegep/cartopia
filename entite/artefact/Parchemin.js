@@ -1,9 +1,9 @@
-// https://pixabay.com/fr/pieuvre-silhouette-mer-1563580/
-// Auteur : https://pixabay.com/fr/users/Mel--123-3023638/
+// https://pixabay.com/fr/carte-parchemin-pirates-d%C3%A9filement-148263/
+// Auteur : https://pixabay.com/fr/users/OpenClipart-Vectors-30363/
 
 var Parchemin = function(terrain)
 {
-	Mechant.call(this, terrain);
+	Artefact.call(this, terrain);
 	var instanceParchemin = this;	
 	
 	this.afficher = function(dessin)
@@ -1971,6 +1971,6 @@ dessin.restore();
 	}
 }
 
-Parchemin.prototype = Object.create(Mechant.prototype);
+Parchemin.prototype = Object.create(Artefact.prototype);
 Parchemin.prototype.constructor = Parchemin;
 
