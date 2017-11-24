@@ -1,10 +1,12 @@
 var Mechant = function(terrain)
 {
 	this.terrain = terrain;
+	this.pas = [2,2];
 	
 	this.iteration = 0;
 	this.calques = 1;
 	this.pasAnime = 10;
+	this.orientation = [1,1];
 
 	positionTerrain = trouverPositionTerrain(this.terrain);
 	//console.log('position ' + positionTerrain['rangee'] + ' ' + positionTerrain['colonne']);
@@ -31,14 +33,23 @@ Mechant.prototype.calculerCalque = function()
 	//return 0;
 }
 
-Mechant.prototype.pas = [2,2];
+Mechant.prototype.orienter = function()
+{
+	if(this.iteration%30 == 0)
+	{
+		this.orientation[0] = 2*Math.random()*aDeplacer.pas[0] - 1;
+		this.orientation[1] = 2*Math.random()*aDeplacer.pas[1] - 1;
+	}
+}
+
 Mechant.prototype.deplacer = function()
 {
 	this.iteration++;
+	this.orienter();
 	aDeplacer = this;
 	//alert(this.instanceHerisson);
-	aDeplacer.xPixel += aDeplacer.pas[0];
-	aDeplacer.yPixel += aDeplacer.pas[1];
+	aDeplacer.xPixel += aDeplacer.orientation[0]*aDeplacer.pas[0];
+	aDeplacer.yPixel += aDeplacer.orientation[1]*aDeplacer.pas[1];
 	aDeplacer.colonne = Math.floor(aDeplacer.xPixel/50) + 1;
 	aDeplacer.rangee = Math.floor(aDeplacer.yPixel/50) + 1;
 	if(aDeplacer.colonne < 22 && aDeplacer.rangee < 15)
@@ -64,9 +75,5 @@ function trouverPositionTerrain(terrainRecherche)
 	}
 }
 
-//this.orienter = function(pas)
-//{
-//	instance.pas = pas;
-//}
 		
 
