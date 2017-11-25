@@ -35,6 +35,8 @@
 		<script type="text/javascript" src="entite/artefact/Artefact.js"></script>
 		<script type="text/javascript" src="entite/artefact/Parchemin.js"></script>
 		<script type="text/javascript" src="entite/artefact/Bouteille.js"></script>
+		<script type="text/javascript" src="entite/artefact/Cristal.js"></script>
+		<script type="text/javascript" src="entite/artefact/Flocon.js"></script>
 	</header>
 	
 	<section id="contenu">
@@ -62,13 +64,15 @@
 		// Recuperer un pointeur au dessin
 		var dessin = document.getElementById('carte').getContext('2d');
 				
-        var fantome = new Fantome('R');
-        var monstreVert = new MonstreVert('G');
 		var herisson = new Herisson('T');
 		var pieuvre = new Pieuvre('E');
+        var fantome = new Fantome('R');
+        var monstreVert = new MonstreVert('G');
 
 		var parchemin = new Parchemin('T');
 		var bouteille = new Bouteille('E');
+		var cristal = new Cristal('R');
+		var flocon = new Flocon('G');
 		
 		var position = 0;
 		var imageCarte = new Image();
@@ -113,6 +117,8 @@
 			
 			parchemin.afficher(dessin);			
 			bouteille.afficher(dessin);
+			cristal.afficher(dessin);
+			flocon.afficher(dessin);
 			
 			fantome.deplacer();
 			fantome.afficher(dessin);
