@@ -42,6 +42,7 @@
 		<script type="text/javascript" src="entite/vehicule/Citrouille.js"></script>
 		<script type="text/javascript" src="entite/vehicule/Champignon.js"></script>
 		<script type="text/javascript" src="entite/vehicule/Chaise.js"></script>
+		<script type="text/javascript" src="entite/vehicule/Fusee.js"></script>
 
 		
 	</header>
@@ -84,6 +85,7 @@
 		var citrouille = new Citrouille('T');
 		var champignon = new Champignon('R');
 		var chaise = new Chaise('G');
+		var fusee = new Fusee('E');
 		
 		var position = 0;
 		var imageCarte = new Image();
@@ -134,6 +136,7 @@
 			citrouille.afficher(dessin);
 			champignon.afficher(dessin);
 			chaise.afficher(dessin);
+			fusee.afficher(dessin);
 			
 			fantome.deplacer();
 			fantome.afficher(dessin);

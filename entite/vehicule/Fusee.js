@@ -1,27 +1,15 @@
-var Fusee = function()
+var Fusee = function(terrain)
 {
-	this.xPixel = 0;
-	this.yPixel = 0;
-	this.pas = [10,10];
-	instanceFusee = this;
-	//this.orienter = function(pas)
-	//{
-	//	instance.pas = pas;
-	//}
-	this.deplacer = function()
-	{
-		//alert(instance);
-		instanceFusee.xPixel += instanceFusee.pas[0];
-		instanceFusee.yPixel += instanceFusee.pas[1];
-		//document.getElementsByTagName("h1")[0].innerHTML = instanceFusee.xPixel;
-	}
+	Vehicule.call(this, terrain);
+	var instanceFusee = this;
 	
 	this.afficher = function(dessin)
-	{
-	
+	{	
 dessin.save();
 dessin.translate(instanceFusee.xPixel, instanceFusee.yPixel);
+dessin.scale(2,2);
 
+dessin.translate(-25, 0);
 dessin.strokeStyle="rgba(0,0,0,0)";
 dessin.miterLimit=4;
 dessin.font="normal normal normal normal 15px / 21.4286px ''";
