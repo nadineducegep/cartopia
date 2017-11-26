@@ -37,6 +37,11 @@
 		<script type="text/javascript" src="entite/artefact/Bouteille.js"></script>
 		<script type="text/javascript" src="entite/artefact/Cristal.js"></script>
 		<script type="text/javascript" src="entite/artefact/Flocon.js"></script>
+		
+		<script type="text/javascript" src="entite/vehicule/Vehicule.js"></script>
+		<script type="text/javascript" src="entite/vehicule/Citrouille.js"></script>
+		<script type="text/javascript" src="entite/vehicule/Champignon.js"></script>
+
 	</header>
 	
 	<section id="contenu">
@@ -73,6 +78,9 @@
 		var bouteille = new Bouteille('E');
 		var cristal = new Cristal('R');
 		var flocon = new Flocon('G');
+		
+		var citrouille = new Citrouille('T');
+		var champignon = new Champignon('R');
 		
 		var position = 0;
 		var imageCarte = new Image();
@@ -119,6 +127,9 @@
 			bouteille.afficher(dessin);
 			cristal.afficher(dessin);
 			flocon.afficher(dessin);
+			
+			citrouille.afficher(dessin);
+			champignon.afficher(dessin);
 			
 			fantome.deplacer();
 			fantome.afficher(dessin);
