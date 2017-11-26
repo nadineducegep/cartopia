@@ -1,24 +1,15 @@
-var Chaise = function()
+var Chaise = function(terrain)
 {
-	this.xPixel = 0;
-	this.yPixel = 0;
-	this.pas = [10,10];
-	instance = this;
-	//this.orienter = function(pas)
-	//{
-	//	instance.pas = pas;
-	//}
-	this.deplacer = function()
-	{
-		//alert(instance);
-		//instance.xPixel += instance.pas[0];
-		//instance.yPixel += instance.pas[1];
-	}
-	
+	Vehicule.call(this, terrain);
+	var instanceChaise = this;
+		
 	this.afficher = function(dessin)
 	{
-	
 dessin.save();
+dessin.translate(instanceChaise.xPixel, instanceChaise.yPixel);
+dessin.scale(0.7,0.7);
+
+dessin.translate(-10, 0);
 dessin.strokeStyle="rgba(0,0,0,0)";
 dessin.miterLimit=4;
 dessin.font="normal normal normal normal 15px / 21.4286px ''";
