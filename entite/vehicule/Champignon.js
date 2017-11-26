@@ -1,24 +1,16 @@
 //https://pixabay.com/fr/champignon-mouche-agarnic-maison-307468/
-var Champignon = function()
+var Champignon = function(terrain)
 {
-	this.xPixel = 0;
-	this.yPixel = 0;
-	this.pas = [10,10];
-	instance = this;
-	//this.orienter = function(pas)
-	//{
-	//	instance.pas = pas;
-	//}
-	this.deplacer = function()
-	{
-		//alert(instance);
-		//instance.xPixel += instance.pas[0];
-		//instance.yPixel += instance.pas[1];
-	}
+	Vehicule.call(this, terrain);
+	var instanceChampignon = this;
 	
 	this.afficher = function(dessin)
 	{
 dessin.save();
+dessin.translate(instanceChampignon.xPixel, instanceChampignon.yPixel);
+dessin.scale(0.8,0.8);
+
+dessin.translate(0, -25);
 dessin.strokeStyle="rgba(0,0,0,0)";
 dessin.miterLimit=4;
 dessin.font="normal normal normal normal 15px / 21.4286px ''";
@@ -417,8 +409,7 @@ dessin.stroke();
 dessin.restore();
 dessin.restore();
 dessin.restore();
+
 dessin.restore();
-
-
 	}
 }
