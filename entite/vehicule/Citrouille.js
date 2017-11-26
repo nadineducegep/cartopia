@@ -2,27 +2,18 @@
 // ~Mary :)
 // OCTOBER 11, 2016
 
-var Citrouille = function()
+var Citrouille = function(terrain)
 {
-	this.xPixel = 0;
-	this.yPixel = 0;
-	this.pas = [10,10];
-	instance = this;
-	//this.orienter = function(pas)
-	//{
-	//	instance.pas = pas;
-	//}
-	this.deplacer = function()
-	{
-		//alert(instance);
-		//instance.xPixel += instance.pas[0];
-		//instance.yPixel += instance.pas[1];
-	}
+	Vehicule.call(this, terrain);
+	var instanceCitrouille = this;
 	
 	this.afficher = function(dessin)
-	{
-	
+	{	
 dessin.save();
+dessin.translate(instanceCitrouille.xPixel, instanceCitrouille.yPixel);
+dessin.scale(1,1);
+
+dessin.translate(-15, -15);
 dessin.strokeStyle="rgba(0,0,0,0)";
 dessin.miterLimit=4;
 dessin.font="normal normal normal normal 15px / 21.4286px ''";
@@ -255,7 +246,10 @@ dessin.closePath();
 dessin.fill();
 dessin.stroke();
 dessin.restore();
-dessin.restore();
 
+dessin.restore();
 	}
 }
+
+Citrouille.prototype = Object.create(Artefact.prototype);
+Citrouille.prototype.constructor = Citrouille;
