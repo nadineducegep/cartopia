@@ -216,3 +216,6 @@ dessin.restore();
 
 	}
 }
+
+Fusee.prototype = Object.create(Artefact.prototype);
+Fusee.prototype.constructor = Fusee;

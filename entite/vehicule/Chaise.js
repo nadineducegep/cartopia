@@ -255,3 +255,6 @@ dessin.restore();
 
 	}
 }
+
+Chaise.prototype = Object.create(Artefact.prototype);
+Chaise.prototype.constructor = Chaise;

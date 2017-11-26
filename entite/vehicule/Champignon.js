@@ -413,3 +413,6 @@ dessin.restore();
 dessin.restore();
 	}
 }
+
+Champignon.prototype = Object.create(Artefact.prototype);
+Champignon.prototype.constructor = Champignon;
