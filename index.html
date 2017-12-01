@@ -44,7 +44,9 @@
 		<script type="text/javascript" src="entite/vehicule/Chaise.js"></script>
 		<script type="text/javascript" src="entite/vehicule/Soucoupe.js"></script>
 
-		
+		<script type="text/javascript" src="entite/joueur/Joueur.js"></script>
+		<script type="text/javascript" src="entite/joueur/Coccinelle.js"></script>
+
 	</header>
 	
 	<section id="contenu">
@@ -86,6 +88,8 @@
 		var champignon = new Champignon('R');
 		var chaise = new Chaise('G');
 		var soucoupe = new Soucoupe('E');
+		
+		var coccinelle = new Coccinelle('E');
 		
 		var position = 0;
 		var imageCarte = new Image();
@@ -146,6 +150,9 @@
 			monstreVert.afficher(dessin);
 			pieuvre.deplacer();
 			pieuvre.afficher(dessin);
+		
+			coccinelle.deplacer();
+			coccinelle.afficher(dessin);
 		
 			dessinerGrille(dessin);
 			window.requestAnimationFrame(dessiner);
